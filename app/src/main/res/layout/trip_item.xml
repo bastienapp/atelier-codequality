@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/texteresu1"
+        android:id="@+id/departureTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         tools:text="Departure" />
 
     <TextView
-        android:id="@+id/textres2"
+        android:id="@+id/firstnameTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/texteresu1"
+        android:layout_below="@+id/departureTxt"
         android:padding="10dp"
         tools:text="Firstname" />
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/priceTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
