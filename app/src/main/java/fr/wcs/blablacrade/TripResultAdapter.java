@@ -48,9 +48,9 @@ public class TripResultAdapter extends BaseAdapter {
         TripResultModel currentItem = (TripResultModel) getItem(position);
 
         // get the TextView for item name and item description
-        TextView mTripDeparture = (TextView) convertView.findViewById(R.id.textTripDeparture);
-        TextView mFirstname = (TextView) convertView.findViewById(R.id.textFirstname);
-        TextView mPrice = (TextView) convertView.findViewById(R.id.textTripPrice);
+        TextView mTripDeparture = (TextView) convertView.findViewById(R.id.text_trip_departure);
+        TextView mFirstname = (TextView) convertView.findViewById(R.id.text_firstname);
+        TextView mPrice = (TextView) convertView.findViewById(R.id.text_trip_price);
 
         //sets the text for item name and item description from the current item object
         mTripDeparture.setText(currentItem.getTripDeparture().toString());

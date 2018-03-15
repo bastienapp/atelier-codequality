@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-        Button mSearch = (Button) findViewById(R.id.btnSearchItinerary);
+        Button mSearch = (Button) findViewById(R.id.btn_search_itinerary);
 
         /** Action sur le bouton search pour accéder à la page SearchItinerary */
 

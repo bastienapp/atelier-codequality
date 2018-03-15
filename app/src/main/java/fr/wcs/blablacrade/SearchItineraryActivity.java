@@ -21,10 +21,10 @@ public class SearchItineraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_itinerary);
 
-        final EditText mEditDeparture = (EditText) findViewById(R.id.editDeparture);
-        final EditText mEditDestination = (EditText) findViewById(R.id.editDestination);
-        final EditText mEditDate = (EditText) findViewById(R.id.editDate);
-        Button mBtnSearch = (Button) findViewById(R.id.btnSearch);
+        final EditText mEditDeparture = (EditText) findViewById(R.id.edit_departure);
+        final EditText mEditDestination = (EditText) findViewById(R.id.edit_destination);
+        final EditText mEditDate = (EditText) findViewById(R.id.edit_date);
+        Button mBtnSearch = (Button) findViewById(R.id.btn_search);
 
         mBtnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
