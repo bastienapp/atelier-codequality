@@ -7,37 +7,37 @@ import android.os.Parcelable;
  * Created by bastienwcs on 21/09/17.
  */
 
-public class SearchRequestModel implements Parcelable {
+public class SearchRequestModel implements Parcelable
+{
+    private String starting;
+    private String where;
+    private String when;
 
-    private String depare;
-    private String oùilva;
-    private String quan;
-
-    public String getDepare() {
-        return depare;
+    public String getStarting() {
+        return starting;
+    }
+    public String getwhere() {
+        return where;
+    }
+    public SearchRequestModel(String starting, String where, String when)
+    {
+        this.starting = starting;
+        this.where = where;
+        this.when = when;
     }
 
-    public String getOùilva() {
-        return oùilva;
+    protected SearchRequestModel(Parcel in)
+    {
+        starting = in.readString();
+        where = in.readString();
+        when = in.readString();
     }
-
-    public SearchRequestModel(String depare, String oùilva, String quan) {
-        this.depare = depare;
-        this.oùilva = oùilva;
-        this.quan = quan;
-    }
-
-        protected SearchRequestModel(Parcel in) {
-            depare = in.readString();
-            oùilva = in.readString();
-            quan = in.readString();
-        }
-
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(depare);
-        dest.writeString(oùilva);
-        dest.writeString(quan);
+    public void writeToParcel(Parcel dest, int flags)
+    {
+        dest.writeString(starting);
+        dest.writeString(where);
+        dest.writeString(when);
     }
 
     @Override
@@ -45,19 +45,21 @@ public class SearchRequestModel implements Parcelable {
         return 0;
     }
 
-    public static final Creator<SearchRequestModel> CREATOR = new Creator<SearchRequestModel>() {
-                @Override
-                public SearchRequestModel createFromParcel(Parcel in) {
-            return new SearchRequestModel(in);
-        }
+    public static final Creator<SearchRequestModel> CREATOR = new Creator<SearchRequestModel>()
+        {
+            @Override
+            public SearchRequestModel createFromParcel(Parcel in)
+                {
+                return new SearchRequestModel(in);
+                }
 
-        @Override
-        public SearchRequestModel[] newArray(int size) {
-            return new SearchRequestModel[size];
-        }
-    };
+            @Override
+            public SearchRequestModel[] newArray(int size) {
+                return new SearchRequestModel[size];
+            }
+        };
 
-    public String getQuan() {
-        return quan;
+            public String getWhen() {
+        return when;
     }
 }

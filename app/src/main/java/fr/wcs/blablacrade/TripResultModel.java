@@ -6,22 +6,24 @@ import java.util.Date;
  * Created by wilder on 13/09/17.
  */
 
-public class TripResultModel {
+public class TripResultModel
+{
 
-    public Date getDepare() {
-        return depare;
+    public Date getDeparture() {
+        return departure;
     }
 
-    public int getPri() {
-        return pri;
+    public int getPrice() {
+        return price;
     }
-    private String prénom;
-    private int pri;
+    private String firstname;
+    private int price;
 
-    public TripResultModel(String prénom, Date depare, int pri) {
-        this.prénom = prénom;this.depare = depare;this.pri = pri;
+    public TripResultModel(String prénom, Date depare, int price)
+    {
+        this.firstname = prénom;this.departure = depare;this.price = price;
     }
-    private Date depare;
+    private Date departure;
 
-    public String getPrénom() {return prénom;}
+    public String getFirstname() {return firstname;}
 }
