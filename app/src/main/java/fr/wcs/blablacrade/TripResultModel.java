@@ -12,15 +12,17 @@ public class TripResultModel {
         return depare;
     }
 
-    public int getPri() {
-        return pri;
+    public int getPrice() {
+        return price;
     }
-    private String prénom;
-    private int pri;
 
-    public TripResultModel(String prénom, Date depare, int pri) {
-        this.prénom = prénom;this.depare = depare;this.pri = pri;
+    private String prénom;
+    private int price;
+
+    public TripResultModel(String prénom, Date depare, int price) {
+        this.prénom = prénom;this.depare = depare;this.price = price;
     }
+
     private Date depare;
 
     public String getPrénom() {return prénom;}

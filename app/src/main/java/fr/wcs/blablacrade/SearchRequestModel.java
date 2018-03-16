@@ -10,44 +10,44 @@ import android.os.Parcelable;
 public class SearchRequestModel implements Parcelable {
 
     private String depare;
-    private String oùilva;
-    private String quan;
+    private String destination;
+    private String date;
 
     public String getDepare() {
         return depare;
     }
 
-    public String getOùilva() {
-        return oùilva;
+    public String getDestination() {
+        return destination;
     }
 
-    public SearchRequestModel(String depare, String oùilva, String quan) {
+    public SearchRequestModel(String depare, String destination, String date) {
         this.depare = depare;
-        this.oùilva = oùilva;
-        this.quan = quan;
+        this.destination = destination;
+        this.date = date;
     }
 
         protected SearchRequestModel(Parcel in) {
             depare = in.readString();
-            oùilva = in.readString();
-            quan = in.readString();
+            destination = in.readString();
+            date = in.readString();
         }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(depare);
-        dest.writeString(oùilva);
-        dest.writeString(quan);
+        dest.writeString(destination);
+        dest.writeString(date);
     }
 
     @Override
     public int describeContents() {
         return 0;
     }
-
     public static final Creator<SearchRequestModel> CREATOR = new Creator<SearchRequestModel>() {
-                @Override
-                public SearchRequestModel createFromParcel(Parcel in) {
+
+        @Override
+        public SearchRequestModel createFromParcel(Parcel in) {
             return new SearchRequestModel(in);
         }
 
@@ -57,7 +57,7 @@ public class SearchRequestModel implements Parcelable {
         }
     };
 
-    public String getQuan() {
-        return quan;
+    public String getDate() {
+        return date;
     }
 }
