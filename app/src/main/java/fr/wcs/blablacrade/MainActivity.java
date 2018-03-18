@@ -16,12 +16,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //bouton cherché
-        Button Search = (Button) findViewById(R.id.gogogo);
-        Search.setOnClickListener(new View.OnClickListener() {
+        Button search = (Button) findViewById(R.id.gogogo);
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent=new Intent(MainActivity.this, SearchItineraryActivity.class);startActivity(intent);
-            }});
+                Intent intent = new Intent(MainActivity.this, SearchItineraryActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

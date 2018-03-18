@@ -4,66 +4,41 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
+
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
-/**
- * Created by wilder on 13/09/17.
- */
+public class TripResultAdapter extends ArrayAdapter<TripResultModel> {
 
-// This is the adapter lol
-public class TripResultAdapter extends BaseAdapter {
-    private Context context; //context
-    private ArrayList<TripResultModel> items; //data source of the list adapter
-
-    //public constructor 
-    public TripResultAdapter(Context context, ArrayList<TripResultModel> items) {
-        this.context = context;
-        this.items = items;
+    public TripResultAdapter(Context context, ArrayList<TripResultModel> trips) {
+        super(context, 0, trips);
     }
 
-    @Override
-    public int getCount() {
-        return items.size(); //returns total of items in the list
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return items.get(position); //returns list item at the specified position
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // inflate the layout for each list row
+        TripResultModel trip = (TripResultModel) getItem(position);
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).
-                    inflate(R.layout.trip_item, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.trip_item, parent, false);
         }
 
-        // get current item to be displayed
-        TripResultModel currentItem = (TripResultModel) getItem(position);
+        TextView date = (TextView) convertView.findViewById(R.id.item_text_date);
+        TextView firstname = (TextView) convertView.findViewById(R.id.item_text_firstname);
+        TextView price = (TextView) convertView.findViewById(R.id.item_text_price);
 
-        // get the TextView for item name and item description
-        TextView departure = (TextView)
-                convertView.findViewById(R.id.texteresu1);
-        TextView firstname = (TextView)
-                convertView.findViewById(R.id.textres2);
-        TextView price = (TextView)
-                convertView.findViewById(R.id.txt);
+        date.setText(trip.getDate().toString());
+        firstname.setText(trip.getFirstname().toString());
+        price.setText(String.valueOf(trip.getPrice()) + " $");
 
-        //sets the text for item name and item description from the current item object
-        departure.setText(currentItem.getDepare().toString());
-        firstname.setText(currentItem.getPrénom());
-        price.setText(String.valueOf(currentItem.getPri()));
+        //Create new SimpleDateFormat
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+        String dateformat = sdf.format(trip.getDate());
+        String dateValue = dateformat + " PM";
+        date.setText(dateValue);
 
-        // returns the view for the current row
         return convertView;
     }
 }
