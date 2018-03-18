@@ -21,61 +21,70 @@ public class SearchItineraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_itinerary);
 
-            final EditText edit1 = (EditText) findViewById(R.id.editText1);
-        final EditText edit2 = (EditText) findViewById(R.id.editText2);
-        final EditText edit3 = (EditText) findViewById(R.id.editText3);
-        Button buttonSearch = (Button) findViewById(R.id.push);
 
-        // clicq action
+
+
+        // Here, I translate the Variables in English and I change the Indentation.
+
+        final EditText editDepartureValue = (EditText) findViewById(R.id.edit_departure);
+        final EditText editDestinationValue = (EditText) findViewById(R.id.edit_destination);
+        final EditText editDateValue = (EditText) findViewById(R.id.edit_date);
+        Button buttonSearch = (Button) findViewById(R.id.button_search);
+
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text1 = edit1.getText().toString();
-                    String text2 = edit2.getText().toString();
-                String texte = edit3.getText().toString();
+                String textDepartureValue   = editDepartureValue.getText().toString();
+                String textDestinationValue = editDestinationValue.getText().toString();
+                String textDateValue        = editDateValue.getText().toString();
 
-                if (text1.isEmpty() || text2.isEmpty()
-                        ) {
-                    Toast painGrillé = Toast.makeText(getApplicationContext(), getResources().getString(R.string.form_error), Toast.LENGTH_SHORT);
-                    painGrillé.show();
-                }else {Intent intent = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
-                        SearchRequestModel searchRequest=new SearchRequestModel(text1, text2, texte); intent.putExtra("searchRequest", searchRequest);
-
-                        SearchItineraryActivity.this.startActivity(intent);
+                if (textDepartureValue.isEmpty() || textDestinationValue.isEmpty()) {
+                    Toast breadGrilled = Toast.makeText(getApplicationContext(),
+                                getResources().getString(R.string.form_error), Toast.LENGTH_SHORT);
+                                     breadGrilled.show();
+                }else {
+                    Intent intent = new Intent(SearchItineraryActivity.this,
+                            ViewSearchItineraryResultsListActivity.class);
+                    SearchRequestModel searchRequest=new SearchRequestModel(textDepartureValue, textDestinationValue, textDateValue);
+                    intent.putExtra("searchRequest", searchRequest);
+                    SearchItineraryActivity.this.startActivity(intent);
                 }
             }
         });
 
-        final Calendar calandréi = Calendar.getInstance();
+
+
+        final Calendar calandar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener dateListener = new DatePickerDialog.OnDateSetListener() {
 
             @Override
-            public void onDateSet(DatePicker view,int ané,int moi,int joure){
-                        calandréi.set(Calendar.YEAR, ané);
-                        calandréi.set(Calendar.MONTH, moi);
-                    calandréi.set(Calendar.DAY_OF_MONTH, joure);
-                UpdateLabel(edit3, calandréi);
-            }};
+            public void onDateSet(DatePicker view,int year,int month,int day){
 
-        edit3.setOnClickListener(new View.OnClickListener() {
+                        calandar.set(Calendar.YEAR, year);
+                        calandar.set(Calendar.MONTH, month);
+                        calandar.set(Calendar.DAY_OF_MONTH, day);
+                        UpdateLabel(editDateValue, calandar);
+            }
+
+            private void UpdateLabel(EditText editDateValue, Calendar calendar) {
+                String myFormat = "dd/MM/yyyy";
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.FRANCE);
+                editDateValue.setText(sdf.format(calendar.getTime()));
+            }
+
+
+        };
+
+        editDateValue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new DatePickerDialog(SearchItineraryActivity.this,
-                        dateListener,
-                        calandréi.get(Calendar.YEAR),
-                        calandréi.get(Calendar.MONTH),
-                        calandréi.get(Calendar.DAY_OF_MONTH)
-                ).show();
+                new DatePickerDialog(SearchItineraryActivity.this,dateListener,
+                        calandar.get(Calendar.YEAR),
+                        calandar.get(Calendar.MONTH),
+                        calandar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+
     }
-
-            private void UpdateLabel(EditText editText, Calendar myCalendar) {
-                String myFormat = "dd/MM/yyyy";
-
-
-                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.FRANCE);
-
-                editText.setText(sdf.format(myCalendar.getTime()));
-            }
-}
+ }

@@ -5,25 +5,35 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/texteresu1"
-        android:layout_width="wrap_content"
+        android:id="@+id/text_departure"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/text_firstname"
+        android:layout_marginTop="13dp"
         android:padding="10dp"
         tools:text="Departure" />
 
     <TextView
-        android:id="@+id/textres2"
+        android:id="@+id/text_firstname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/texteresu1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
         android:padding="10dp"
         tools:text="Firstname" />
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/text_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_firstname"
+        android:layout_alignBottom="@+id/text_firstname"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
         android:padding="10dp"
-        tools:text="Price" />
+        tools:text="@string/price" />
 </RelativeLayout>
