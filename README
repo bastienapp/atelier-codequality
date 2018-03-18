@@ -1,3 +1,12 @@
-## BLA BLA CRADE
+## BLA BLA Propre
 
-Paske c notre projé !
+Notre application est basée sur le même fonctionnement que BlaBlaCar:
+    * la première page montre un bouto qui envois sur la 2ème activité pour recherche un itinéraire
+
+    * On peut entrer la ville de départ, la ville de destination et la date choisie pour le voyage
+    afin de voir les résultats de notre recherche. Si les champs départs et destination ne sont pas
+    remplis, un message d'erreur s'affiche.
+
+    * sur la derière page, le titre de l'activité est dans le format "départ >> destination" et un
+    toast nous indique la date du voyage souhaitée. Une liste des résultats est affichée avec les
+    dates et heures des voyages proposées par chaque personne ainsi que le prix du voyage.
