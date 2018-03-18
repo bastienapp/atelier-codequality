@@ -1,3 +1,5 @@
-## BLA BLA CRADE
 
-Paske c notre projé !
+
+
+	The application start on a activity which name is "Activity_Main". On this activity, we have a button which send us on a new activity which name is "Activity_Search_Itinerary". In this new page we can see a formulaire, where we can fill "The Departure, The Destination and the date. The goal of these informations is to find out, a driver at the date that we will decide it to go in a trip. 
+	Afterwards, we arrive in the last activity which name is "Activity_view_search_itinerary_results" there we got the results from the search. We can see a list with several drivers ans several hours, than the user can decide when It's the better time for him to go. 

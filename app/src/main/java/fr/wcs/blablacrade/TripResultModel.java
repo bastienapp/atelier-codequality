@@ -5,23 +5,34 @@ import java.util.Date;
 /**
  * Created by wilder on 13/09/17.
  */
-
+// I tranlate in English all the Variables and correct the constructors structure.
 public class TripResultModel {
 
-    public Date getDepare() {
-        return depare;
+
+    private String firstName;
+    private int price;
+    private Date departure;
+
+    public Date getDeparture() {
+
+        return departure;
     }
 
-    public int getPri() {
-        return pri;
-    }
-    private String prénom;
-    private int pri;
+    public int getPrice() {
 
-    public TripResultModel(String prénom, Date depare, int pri) {
-        this.prénom = prénom;this.depare = depare;this.pri = pri;
+        return price;
     }
-    private Date depare;
 
-    public String getPrénom() {return prénom;}
+    public String getFirstName() {
+
+        return firstName;
+    }
+
+    public TripResultModel(String firstName, Date departure, int price) {
+        this.firstName = firstName;
+        this.departure = departure;
+        this.price = price;
+    }
+
+
 }
