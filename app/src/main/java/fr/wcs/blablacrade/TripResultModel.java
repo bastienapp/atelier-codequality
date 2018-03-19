@@ -7,21 +7,28 @@ import java.util.Date;
  */
 
 public class TripResultModel {
+    private String firstname;
+    private int price;
+    private Date dateDeparture;
 
-    public Date getDepare() {
-        return depare;
+    public Date getdateDeparture() {
+        return dateDeparture;
     }
 
-    public int getPri() {
-        return pri;
+    public int getPrice() {
+        return price;
     }
-    private String prénom;
-    private int pri;
-
-    public TripResultModel(String prénom, Date depare, int pri) {
-        this.prénom = prénom;this.depare = depare;this.pri = pri;
+    public String getFirstname() {
+        return firstname;
     }
-    private Date depare;
 
-    public String getPrénom() {return prénom;}
+
+    public TripResultModel(String firstname, Date dateDeparture, int price) {
+        this.firstname = firstname;
+        this.dateDeparture = dateDeparture;
+        this.price = price;
+    }
+
+
+
 }
