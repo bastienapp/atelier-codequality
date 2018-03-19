@@ -3,24 +3,24 @@ package fr.wcs.blablacrade;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+
 public class SearchRequestModel implements Parcelable {
 
     private String departure;
     private String destination;
     private String date;
 
+    public SearchRequestModel(String departure, String destination, String date) {
+        this.departure = departure;
+        this.destination = destination;
+        this.date = date;
+    }
     public String getDeparture() {
         return departure;
     }
 
     public String getDestination() {
         return destination;
-    }
-
-    public SearchRequestModel(String departure, String destination, String date) {
-        this.departure = departure;
-        this.destination = destination;
-        this.date = date;
     }
 
     protected SearchRequestModel(Parcel in) {
@@ -34,6 +34,7 @@ public class SearchRequestModel implements Parcelable {
         dest.writeString(departure);
         dest.writeString(destination);
         dest.writeString(date);
+
     }
 
     @Override

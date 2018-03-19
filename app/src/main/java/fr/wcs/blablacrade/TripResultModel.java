@@ -5,18 +5,18 @@ import java.util.Date;
 
 public class TripResultModel {
 
-    private Date departure;
+    private Date date;
     private String firstname;
     private int price;
 
-    public TripResultModel(String firstname, Date departure, int price) {
+    public TripResultModel(String firstname, Date date, int price) {
         this.firstname = firstname;
-        this.departure = departure;
+        this.date = date;
         this.price = price;
     }
 
-    public Date getDeparture() {
-        return departure;
+    public Date getDate() {
+        return date;
     }
 
     public int getPrice() {
@@ -26,4 +26,5 @@ public class TripResultModel {
     public String getFirstname() {
         return firstname;
     }
+
 }

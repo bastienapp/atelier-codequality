@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
 public class TripResultAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<TripResultModel> items;
@@ -43,7 +42,7 @@ public class TripResultAdapter extends BaseAdapter {
         TextView departure = convertView.findViewById(R.id.texteresu1);
         TextView firstname = convertView.findViewById(R.id.textres2);
         TextView price = convertView.findViewById(R.id.txt);
-        departure.setText(currentItem.getDeparture().toString());
+        departure.setText(currentItem.getDate().toString());
         firstname.setText(currentItem.getFirstname());
         price.setText(String.valueOf(currentItem.getPrice()));
 

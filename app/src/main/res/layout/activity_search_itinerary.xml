@@ -6,19 +6,17 @@
     android:padding="20dp"
     tools:context="fr.wcs.blablacrade.SearchItineraryActivity">
 
-<TextView
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/departure" />    <EditText
+        android:text="@string/departure" />
+    <EditText
         android:id="@+id/departure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/departure"
-        android:layout_below="@+id/textView1"
-
-
-    />
+        android:layout_below="@+id/textView1" />
 
     <TextView
         android:id="@+id/textView2"
@@ -35,18 +33,19 @@
         android:text="@string/date"
         android:layout_below="@+id/destination" />
 
-                <EditText
-                    android:id="@+id/date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/date"
-                    android:focusable="false"
-                    android:layout_below="@+id/tewtView3"/>
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/date"
+        android:focusable="false"
+        android:layout_below="@+id/tewtView3"/>
 
-                                    <Button
-                                        android:id="@+id/push"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/search_text"
-                                        android:layout_below="@id/date"/>
-                </RelativeLayout>
+    <Button
+        android:id="@+id/push"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_text"
+        android:layout_below="@id/date"/>
+
+    </RelativeLayout>

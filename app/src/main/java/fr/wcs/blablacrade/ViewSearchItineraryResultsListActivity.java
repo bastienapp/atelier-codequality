@@ -16,6 +16,7 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_search_itinerary_results_list);
 
+
         SearchRequestModel searchTrip = getIntent().getParcelableExtra("searchRequest");
         String departure = searchTrip.getDeparture();
         String destination = searchTrip.getDestination();
@@ -37,5 +38,6 @@ public class ViewSearchItineraryResultsListActivity extends AppCompatActivity {
 
         TripResultAdapter adapter = new TripResultAdapter(this, listTrip);
         searchResult.setAdapter(adapter);
+
     }
 }

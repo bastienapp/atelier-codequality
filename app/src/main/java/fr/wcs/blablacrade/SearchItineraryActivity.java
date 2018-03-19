@@ -42,9 +42,11 @@ public class SearchItineraryActivity extends AppCompatActivity {
                     SearchRequestModel searchRequest=new SearchRequestModel(departureValue, destinationValue, dateValue);
                     intent.putExtra("searchRequest", searchRequest);
                     SearchItineraryActivity.this.startActivity(intent);
+
                 }
             }
         });
+
 
         final Calendar calendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener dateListener = new DatePickerDialog.OnDateSetListener() {
@@ -62,13 +64,16 @@ public class SearchItineraryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 new DatePickerDialog(SearchItineraryActivity.this, dateListener, calendar.get(Calendar.YEAR),
                         calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+
             }
         });
     }
+
 
     private void UpdateLabel(EditText editText, Calendar myCalendar) {
         String myFormat = "dd/MM/yyyy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.FRANCE);
         editText.setText(sdf.format(myCalendar.getTime()));
     }
+
 }
