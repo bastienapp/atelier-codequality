@@ -7,46 +7,46 @@
     tools:context="fr.wcs.blablacrade.SearchItineraryActivity">
 
 <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textView_depart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/depare" />    <EditText
-        android:id="@+id/editText1"
+        android:text="@string/departure" />    <EditText
+        android:id="@+id/editText_depart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/depare"
-        android:layout_below="@+id/textView1"
+        android:hint="@string/departure"
+        android:layout_below="@+id/textView_depart"
 
 
     />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_destination"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/oùilva"
-        android:layout_below="@+id/editText1" />
+        android:text="@string/destination"
+        android:layout_below="@+id/editText_depart" />
 
-    <EditText android:id="@+id/editText2"
+    <EditText android:id="@+id/editText_destination"
         android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:hint="@string/oùilva" android:layout_below="@+id/textView2"/><TextView android:id="@+id/tewtView3"
+        android:hint="@string/destination" android:layout_below="@+id/textView_destination"/><TextView android:id="@+id/textView_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/quan"
-        android:layout_below="@+id/editText2" />
+        android:text="@string/date"
+        android:layout_below="@+id/editText_destination" />
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/editText_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/quan"
+                    android:hint="@string/date"
                     android:focusable="false"
-                    android:layout_below="@+id/tewtView3"/>
+                    android:layout_below="@+id/textView_date"/>
 
-                                    <Button
-                                        android:id="@+id/push"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/search_text"
-                                        android:layout_below="@id/editText3"/>
+    <Button
+        android:id="@+id/button_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_date"
+        android:text="@string/search_text" />
                 </RelativeLayout>
