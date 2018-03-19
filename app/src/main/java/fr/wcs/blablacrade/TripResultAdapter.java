@@ -36,6 +36,7 @@ public class TripResultAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
+
         return position;
     }
 
@@ -43,27 +44,22 @@ public class TripResultAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // inflate the layout for each list row
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).
-                    inflate(R.layout.trip_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.trip_item, parent, false);
         }
 
         // get current item to be displayed
         TripResultModel currentItem = (TripResultModel) getItem(position);
 
         // get the TextView for item name and item description
-        TextView departure = (TextView)
-                convertView.findViewById(R.id.texteresu1);
-        TextView firstname = (TextView)
-                convertView.findViewById(R.id.textres2);
-        TextView price = (TextView)
-                convertView.findViewById(R.id.txt);
+        TextView departureResults = (TextView) convertView.findViewById(R.id.text_departure);
+        TextView firstnameResults = (TextView) convertView.findViewById(R.id.text_firstname);
+        TextView price = (TextView) convertView.findViewById(R.id.text_price);
 
         //sets the text for item name and item description from the current item object
-        departure.setText(currentItem.getDepare().toString());
-        firstname.setText(currentItem.getPrénom());
-        price.setText(String.valueOf(currentItem.getPri()));
+        departureResults.setText(currentItem.getDeparture().toString());
+        firstnameResults.setText(currentItem.getFirstname());
+        price.setText(String.valueOf(currentItem.getPrice()));
 
-        // returns the view for the current row
         return convertView;
     }
 }

@@ -13,15 +13,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //bouton cherché
-        Button Search = (Button) findViewById(R.id.gogogo);
+        Button Search = (Button) findViewById(R.id.button_search);
         Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent=new Intent(MainActivity.this, SearchItineraryActivity.class);startActivity(intent);
-            }});
+
+                Intent goToItineraryActivity = new Intent(MainActivity.this, SearchItineraryActivity.class);
+                startActivity(goToItineraryActivity);
+            }
+        });
     }
 }
