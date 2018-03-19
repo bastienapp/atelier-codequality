@@ -44,8 +44,7 @@ public class TripResultAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // inflate the layout for each list row
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).
-                    inflate(R.layout.trip_item, parent, false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.trip_item, parent, false);
         }
 
         // get current item to be displayed
