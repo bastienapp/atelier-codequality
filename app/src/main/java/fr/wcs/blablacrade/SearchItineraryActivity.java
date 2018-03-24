@@ -21,53 +21,54 @@ public class SearchItineraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_itinerary);
 
-            final EditText edit1 = (EditText) findViewById(R.id.editText1);
-        final EditText edit2 = (EditText) findViewById(R.id.editText2);
-        final EditText edit3 = (EditText) findViewById(R.id.editText3);
-        Button buttonSearch = (Button) findViewById(R.id.push);
+            final EditText editDeparture = (EditText) findViewById(R.id.editText_departure);
+            final EditText editDestination = (EditText) findViewById(R.id.editText_destination);
+            final EditText editDate = (EditText) findViewById(R.id.editText_date);
+            Button buttonSearch = (Button) findViewById(R.id.button_search);
 
         // clicq action
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text1 = edit1.getText().toString();
-                    String text2 = edit2.getText().toString();
-                String texte = edit3.getText().toString();
+                String departure = editDeparture.getText().toString();
+                String destination = editDestination.getText().toString();
+                String date = editDate.getText().toString();
 
-                if (text1.isEmpty() || text2.isEmpty()
-                        ) {
+                if (departure.isEmpty() || destination.isEmpty()) {
                     Toast painGrillé = Toast.makeText(getApplicationContext(), getResources().getString(R.string.form_error), Toast.LENGTH_SHORT);
                     painGrillé.show();
-                }else {Intent intent = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
-                        SearchRequestModel searchRequest=new SearchRequestModel(text1, text2, texte); intent.putExtra("searchRequest", searchRequest);
-
-                        SearchItineraryActivity.this.startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
+                    SearchRequestModel searchRequest = new SearchRequestModel(departure, destination, date);
+                    intent.putExtra("searchRequest", searchRequest);
+                    SearchItineraryActivity.this.startActivity(intent);
                 }
             }
         });
 
-        final Calendar calandréi = Calendar.getInstance();
+        final Calendar calendar = Calendar.getInstance();
         final DatePickerDialog.OnDateSetListener dateListener = new DatePickerDialog.OnDateSetListener() {
 
             @Override
-            public void onDateSet(DatePicker view,int ané,int moi,int joure){
-                        calandréi.set(Calendar.YEAR, ané);
-                        calandréi.set(Calendar.MONTH, moi);
-                    calandréi.set(Calendar.DAY_OF_MONTH, joure);
-                UpdateLabel(edit3, calandréi);
+            public void onDateSet(DatePicker view,int year,int month,int dayOfMonth){
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                UpdateLabel(editDate, calendar);
             }};
 
-        edit3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new DatePickerDialog(SearchItineraryActivity.this,
-                        dateListener,
-                        calandréi.get(Calendar.YEAR),
-                        calandréi.get(Calendar.MONTH),
-                        calandréi.get(Calendar.DAY_OF_MONTH)
-                ).show();
-            }
-        });
+            editDate.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        new DatePickerDialog(SearchItineraryActivity.this,
+                                dateListener,
+                                calendar.get(Calendar.YEAR),
+                                calendar.get(Calendar.MONTH),
+                                calendar.get(Calendar.DAY_OF_MONTH)
+                        ).show();
+                    }
+            });
     }
 
             private void UpdateLabel(EditText editText, Calendar myCalendar) {

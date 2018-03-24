@@ -9,35 +9,39 @@ import android.os.Parcelable;
 
 public class SearchRequestModel implements Parcelable {
 
-    private String depare;
-    private String oùilva;
-    private String quan;
 
-    public String getDepare() {
-        return depare;
+    private String departureModel;
+    private String destinationModel;
+    private String dateModel;
+
+    //getters
+    public String getDepartureModel() {
+        return departureModel;
+    }
+    public String getDestinationModel() {
+        return destinationModel;
+    }
+    public String getDateModel() {
+        return dateModel;
     }
 
-    public String getOùilva() {
-        return oùilva;
+    public SearchRequestModel(String departureModel, String destinationModel, String dateModel) {
+        this.departureModel = departureModel;
+        this.destinationModel = destinationModel;
+        this.dateModel = dateModel;
     }
 
-    public SearchRequestModel(String depare, String oùilva, String quan) {
-        this.depare = depare;
-        this.oùilva = oùilva;
-        this.quan = quan;
+    protected SearchRequestModel(Parcel in) {
+        departureModel = in.readString();
+        destinationModel = in.readString();
+        dateModel = in.readString();
     }
-
-        protected SearchRequestModel(Parcel in) {
-            depare = in.readString();
-            oùilva = in.readString();
-            quan = in.readString();
-        }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(depare);
-        dest.writeString(oùilva);
-        dest.writeString(quan);
+        dest.writeString(departureModel);
+        dest.writeString(destinationModel);
+        dest.writeString(dateModel);
     }
 
     @Override
@@ -46,9 +50,9 @@ public class SearchRequestModel implements Parcelable {
     }
 
     public static final Creator<SearchRequestModel> CREATOR = new Creator<SearchRequestModel>() {
-                @Override
-                public SearchRequestModel createFromParcel(Parcel in) {
-            return new SearchRequestModel(in);
+        @Override
+        public SearchRequestModel createFromParcel(Parcel in) {
+        return new SearchRequestModel(in);
         }
 
         @Override
@@ -57,7 +61,5 @@ public class SearchRequestModel implements Parcelable {
         }
     };
 
-    public String getQuan() {
-        return quan;
-    }
+
 }
